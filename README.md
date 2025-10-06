@@ -41,6 +41,8 @@ leetcode-pyspark/<br>
 ├─ .env.example<br>
 ├─ .gitignore<br>
 ├─ README.md<br>
+├─ start.sh
+├─ stop.sh
 ├─ libs/                     # optional: place JDBC jar(s) here<br>
 ├─ workspace/<br>
 │  ├─ Dockerfile<br>
@@ -86,6 +88,7 @@ From the project root:
 ```
 docker compose up -d --build
 ```
+else just run ./start.sh in your original folder in case you are in Linux OS/Bash shell
 
 ### 6) Check container health
 ```
