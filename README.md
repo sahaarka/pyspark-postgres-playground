@@ -41,8 +41,8 @@ leetcode-pyspark/<br>
 ├─ .env.example<br>
 ├─ .gitignore<br>
 ├─ README.md<br>
-├─ start.sh
-├─ stop.sh
+├─ start.sh<br>
+├─ stop.sh<br>
 ├─ libs/                     # optional: place JDBC jar(s) here<br>
 ├─ workspace/<br>
 │  ├─ Dockerfile<br>
