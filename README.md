@@ -1,6 +1,6 @@
 # PySpark + PostgreSQL Playground
 
-## ⚠️ *I am not accepting any pull request on this repository*
+### ⚠️ *I am not accepting any pull request on this repository*
 
 A self-contained, reproducible Data Engineering sandbox built using **Docker Compose** — combining:
 - 🧮 **PySpark** for distributed data processing
