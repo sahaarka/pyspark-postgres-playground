@@ -62,6 +62,41 @@ cp .env.example .env
 # Edit .env if you want custom credentials
 ```
 
+### 4) Start Docker Desktop and enable WSL2 integration
+* Open Docker Desktop → Settings → Resources → WSL Integration → enable for Ubuntu-22.04 (if using WSL).
+* When Windows firewall asks, Allow on Private networks only.
+
+### 5) Build & run the stack
+From the project root:
+```
+docker compose up -d --build
+```
+
+### 6) Check container health
+```
+docker compose ps
+docker compose logs -f
+```
+Wait until:
+* db shows database system is ready to accept connections.
+* workspace prints the Jupyter URL (with token).
+
+### 7) Seed the database (run once)
+```
+docker compose exec workspace python /home/jovyan/work/seed_data.py
+```
+This creates an **employees** table with sample rows.
+
+### 8) Open the UIs
+* JupyterLab: [http://localhost:8888](http://localhost:8888) — get the token via docker compose logs workspace or run docker compose exec workspace jupyter notebook list.
+* pgAdmin: [http://localhost:5050](http://localhost:5050) — login with admin@local.com / admin.
+
+
+
+
+
+
+
 
 
 
