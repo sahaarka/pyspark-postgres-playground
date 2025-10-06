@@ -56,7 +56,7 @@ leetcode-pyspark/<br>
 
 ### 1) Clone the repo
 ```bash
-git clone <repo-url>
+git clone https://github.com/sahaarka/pyspark-postgres-playground.git
 cd pyspark-postgres-playground   # or your repo folder name
 ```
 
