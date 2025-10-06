@@ -154,16 +154,3 @@ ORDER BY table_schema, table_name;
 ```
 * ```docker compose logs -f db```
 * ```docker compose logs -f workspace```
-
-
-
-
-
-
-
-
-
-
-
-
-

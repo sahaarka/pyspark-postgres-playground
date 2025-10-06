@@ -1,0 +1,13 @@
+{
+  "name": "LeetCode PySpark Dev",
+  "dockerComposeFile": ["../docker-compose.yml"],
+  "service": "workspace",
+  "workspaceFolder": "/home/jovyan/work",
+  "shutdownAction": "stopCompose",
+  "extensions": [
+    "ms-python.python",
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers"
+  ],
+  "postCreateCommand": "pip install --no-cache-dir -r /home/jovyan/work/requirements.txt || true"
+}

@@ -1,0 +1,41 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  workspace:
+    build: ./workspace
+    depends_on:
+      - db
+    env_file:
+      - .env
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - PYSPARK_ALLOW_INSECURE_GATEWAY=1
+    volumes:
+      - ./workspace:/home/jovyan/work
+      - ./libs:/home/jovyan/libs  # do NOT mount to /usr/local/spark/jars (avoids hiding spark jars)
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    restart: unless-stopped
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@local.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      - db
+    ports:
+      - "5050:80"
+
+volumes:
+  db-data:
