@@ -91,7 +91,17 @@ This creates an **employees** table with sample rows.
 * JupyterLab: [http://localhost:8888](http://localhost:8888) — get the token via docker compose logs workspace or run docker compose exec workspace jupyter notebook list.
 * pgAdmin: [http://localhost:5050](http://localhost:5050) — login with admin@local.com / admin.
 
+9) Register Postgres in pgAdmin
 
+If pgAdmin runs as a container (recommended), register server with:
+
+Host name/address: **db**
+Port: **5432**
+DB: **leetcode** (or postgres)
+User: from *.env* (e.g., postgres)
+Password: from *.env* (e.g., postgrespw)
+
+If you use a desktop DB client (DBeaver/pgAdmin desktop), use localhost as host.
 
 
 
